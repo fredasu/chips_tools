@@ -1,0 +1,32 @@
+{
+    "games" :
+    [
+        {
+            "title": "Chip's Challenge",
+            "platform":
+            {
+                "launch year": 1989,
+                "name": "Atari Lynx"
+            },
+            "Year": 1989
+        },
+        {
+            "title": "Chip's Challenge 2",
+            "platform":
+            {
+                "launch year": 2003,
+                "name": "Steam"
+            },
+            "Year": 2015
+        },
+        {
+            "title": "Plants vs. Zombies",
+            "platform":
+            {
+                "launch year": 2009,
+                "name": "Microsoft Windows"
+            },
+            "Year": 2024
+        }
+    ]
+}
