@@ -26,10 +26,9 @@ with open(inputFile, "r") as reader:
         ccLevel.num_chips = lev["chips"]
         ccLevel.upper_layer = lev["upper layer"]
 
-        fields = lev["fields"]
-        for each in fields:
-            key = list(each.keys())[0]
-            value = each[key]
+        fields = lev["fields"][0]
+        for key in fields:  #loop through field dictionary via keys
+            value = fields[key]
 
             if (key == "3"):
                 ccField = cc_dat_utils.cc_classes.CCMapTitleField(value)
@@ -39,7 +38,7 @@ with open(inputFile, "r") as reader:
                 ccField = cc_dat_utils.cc_classes.CCMapHintField(value)
             elif (key == "10"):
                 ccCoordList = []
-                for i in range(0, len(each[key]), 2):
+                for i in range(0, len(value), 2):
                     x = value[i]
                     y = value[i+1]
                     coord = cc_dat_utils.cc_classes.CCCoordinate(x, y)
