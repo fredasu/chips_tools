@@ -26,7 +26,7 @@ with open(inputFile, "r") as reader:
         ccLevel.num_chips = lev["chips"]
         ccLevel.upper_layer = lev["upper layer"]
 
-        fields = lev["fields"][0]
+        fields = lev["fields"]
         for key in fields:  #loop through field dictionary via keys
             value = fields[key]
 
@@ -44,6 +44,7 @@ with open(inputFile, "r") as reader:
                     coord = cc_dat_utils.cc_classes.CCCoordinate(x, y)
                     ccCoordList.append(coord)
                 ccField = cc_dat_utils.cc_classes.CCMonsterMovementField(ccCoordList)
+                #couldve updated the upper layer with the type of monster instead of preloaded
 
             ccLevel.add_field(ccField)
 
