@@ -3,8 +3,8 @@ import json
 
 #Part 3
 #Load your custom JSON file
-inputFile = "data/levels.json"
-outputFile = "data/levels.dat"
+inputFile = "data/fysu_cc1.json"
+outputFile = "data/fysu_cc1.dat"
 
 levelPack = cc_dat_utils.cc_classes.CCLevelPack()
 
