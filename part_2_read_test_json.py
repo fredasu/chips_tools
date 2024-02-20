@@ -30,6 +30,5 @@ with open(input_json_file, "r") as reader:
     json_data = json.load(reader)   #Use the json module to load the data from the file
 #Use make_game_library_from_json(json_data) to convert the data to GameLibrary data
 game_library = make_game_library_from_json(json_data)
-#Print out the resulting GameLibrary data using print()
 print(game_library)
 ### End Add Code Here ###
