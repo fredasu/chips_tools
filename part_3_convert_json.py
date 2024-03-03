@@ -3,8 +3,8 @@ import json
 
 #Part 3
 #Load your custom JSON file
-inputFile = "data/fysu_cc1.json"
-outputFile = "data/fysu_cc1.dat"
+inputFile = "data/fysu_cc_level_pack.json"
+outputFile = "data/fysu_cc_level_pack.dat"
 
 levelPack = cc_dat_utils.cc_classes.CCLevelPack()
 
@@ -24,23 +24,24 @@ with open(inputFile, "r") as reader:
         ccLevel.level_number = lev["number"]
         ccLevel.time = lev["time"]
         ccLevel.num_chips = lev["chips"]
-        ccLevel.upper_layer = lev["upper layer"]
+        ccLevel.upper_layer = lev["upperLayer"]
+        ccLevel.lower_layer = lev["lowerLayer"]
 
         fields = lev["fields"]
         for key in fields:  #loop through field dictionary via keys
             value = fields[key]
 
-            if (key == "3"):
+            if (key == "three"):
                 ccField = cc_dat_utils.cc_classes.CCMapTitleField(value)
-            elif (key == "6"):
+            elif (key == "six"):
                 ccField = cc_dat_utils.cc_classes.CCEncodedPasswordField(value)
-            elif (key == "7"):
+            elif (key == "seven"):
                 ccField = cc_dat_utils.cc_classes.CCMapHintField(value)
-            elif (key == "10"):
+            elif (key == "ten"):
                 ccCoordList = []
                 for i in range(0, len(value), 2):
-                    x = value[i]
-                    y = value[i+1]
+                    x = int(value[i])
+                    y = int(value[i+1])
                     coord = cc_dat_utils.cc_classes.CCCoordinate(x, y)
                     ccCoordList.append(coord)
                 ccField = cc_dat_utils.cc_classes.CCMonsterMovementField(ccCoordList)
